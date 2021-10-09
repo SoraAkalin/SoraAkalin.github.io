@@ -9,7 +9,7 @@
   <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2021/09/17/hello-world/index.html">
+<meta property="og:url" content="http://soraakalin.top/uncategorized/hello-world">
 <meta property="og:site_name" content="知识储备库">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:locale" content="zh_CN">
@@ -66,7 +66,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://soraakalin.top"></form>
       </div>
     </div>
   </div>
@@ -75,7 +75,7 @@
       <div class="outer">
         <section id="main"><article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/09/17/hello-world/" class="article-date">
+    <a href="/uncategorized/hello-world" class="article-date">
   <time class="dt-published" datetime="2021-09-17T03:12:40.697Z" itemprop="datePublished">2021-09-17</time>
 </a>
     
@@ -112,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/09/17/hello-world/" data-id="ckty2sw2o0001vwuohegq3dw2" data-title="Hello World" class="article-share-link">Teilen</a>
+      <a data-url="http://soraakalin.top/uncategorized/hello-world" data-id="ckujuhnig0005z8uobido7gqn" data-title="Hello World" class="article-share-link">Teilen</a>
       
       
       
@@ -122,7 +122,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/09/17/MarkDown/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/uncategorized/MarkDown" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
@@ -181,19 +181,19 @@
       <ul>
         
           <li>
-            <a href="/2021/10/09/gitlearn/">Git学习</a>
+            <a href="/uncategorized/gitlearn">Git学习</a>
           </li>
         
           <li>
-            <a href="/2021/09/24/O2Ocoupon/">天池新人实战赛o2o优惠券使用预测总结</a>
+            <a href="/uncategorized/O2Ocoupon">天池新人实战赛o2o优惠券使用预测总结</a>
           </li>
         
           <li>
-            <a href="/2021/09/17/MarkDown/">MarkDown基本语法</a>
+            <a href="/uncategorized/MarkDown">MarkDown基本语法</a>
           </li>
         
           <li>
-            <a href="/2021/09/17/hello-world/">Hello World</a>
+            <a href="/uncategorized/hello-world">Hello World</a>
           </li>
         
       </ul>

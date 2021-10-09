@@ -9,7 +9,7 @@
   <meta name="description" content="&amp;emsp;&amp;emsp;最近的比赛代码更新太快了，想着是时候学一下怎么在github上管理代码了，也把学习过程记录下来以免忘掉。 git简介git相较于普通的文件管理系统，不但能自动帮我记录每次文件的改动，还可以让同事协作编辑，这样就不用自己管理一堆类似的文件了，也不需要把文件传来传去。如果想查看某次改动，只需要在软件里瞄一眼就可以，岂不是很方便？ 这个软件用起来就应该像这个样子，能记录每次文件的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git学习">
-<meta property="og:url" content="http://example.com/2021/10/09/gitlearn/index.html">
+<meta property="og:url" content="http://soraakalin.top/uncategorized/gitlearn">
 <meta property="og:site_name" content="知识储备库">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;最近的比赛代码更新太快了，想着是时候学一下怎么在github上管理代码了，也把学习过程记录下来以免忘掉。 git简介git相较于普通的文件管理系统，不但能自动帮我记录每次文件的改动，还可以让同事协作编辑，这样就不用自己管理一堆类似的文件了，也不需要把文件传来传去。如果想查看某次改动，只需要在软件里瞄一眼就可以，岂不是很方便？ 这个软件用起来就应该像这个样子，能记录每次文件的">
 <meta property="og:locale" content="zh_CN">
@@ -72,7 +72,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://soraakalin.top"></form>
       </div>
     </div>
   </div>
@@ -81,7 +81,7 @@
       <div class="outer">
         <section id="main"><article id="post-gitlearn" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/10/09/gitlearn/" class="article-date">
+    <a href="/uncategorized/gitlearn" class="article-date">
   <time class="dt-published" datetime="2021-10-09T09:25:46.000Z" itemprop="datePublished">2021-10-09</time>
 </a>
     
@@ -260,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/09/gitlearn/" data-id="ckujlee4e0000dcuo4bn04l2t" data-title="Git学习" class="article-share-link">Teilen</a>
+      <a data-url="http://soraakalin.top/uncategorized/gitlearn" data-id="ckujuhnil000gz8uof0iz0it3" data-title="Git学习" class="article-share-link">Teilen</a>
       
       
       
@@ -273,7 +273,7 @@
 <nav id="article-nav">
   
   
-    <a href="/2021/09/24/O2Ocoupon/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/uncategorized/O2Ocoupon" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title">天池新人实战赛o2o优惠券使用预测总结</div>
     </a>
@@ -327,19 +327,19 @@
       <ul>
         
           <li>
-            <a href="/2021/10/09/gitlearn/">Git学习</a>
+            <a href="/uncategorized/gitlearn">Git学习</a>
           </li>
         
           <li>
-            <a href="/2021/09/24/O2Ocoupon/">天池新人实战赛o2o优惠券使用预测总结</a>
+            <a href="/uncategorized/O2Ocoupon">天池新人实战赛o2o优惠券使用预测总结</a>
           </li>
         
           <li>
-            <a href="/2021/09/17/MarkDown/">MarkDown基本语法</a>
+            <a href="/uncategorized/MarkDown">MarkDown基本语法</a>
           </li>
         
           <li>
-            <a href="/2021/09/17/hello-world/">Hello World</a>
+            <a href="/uncategorized/hello-world">Hello World</a>
           </li>
         
       </ul>
