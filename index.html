@@ -71,6 +71,81 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-re" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/10/12/re/" class="article-date">
+  <time class="dt-published" datetime="2021-10-12T13:04:15.000Z" itemprop="datePublished">2021-10-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/10/12/re/">re正则匹配的学习与运用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>在比赛中常常见到使用re正则式对赛题数据进行预处理，这里将其学习过程写作笔记供使用时翻阅</p>
+<h2 id="re正则式的常用操作符"><a href="#re正则式的常用操作符" class="headerlink" title="re正则式的常用操作符"></a>re正则式的常用操作符</h2><p>参考资料：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/suitcases/p/11246098.html">RE（正则表达式）库入门</a></p>
+<p>操作符　　　　说明　　　　　　　　　　　　　　　　　　　　　　　　　　实例</p>
+<p>.　　　　　　表示任何单个字符，它可以代表字符表上所有出现的一个字符</p>
+<p>[ ]　　　　 字符集，对单个字符给出取值范围　　　　　　　　　　　　　　　[abc]表示a、b、c，[a-z]表示a到z单个字符</p>
+<p>[^ ]　　　　非字符集，对单个字符给出排除范围　　　　　　　　　　　　　　[^abc]表示非a或b或c的单个字符</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;（出现一个字符，但这个字符不是a，不是b，也不是c）</p>
+<p>*　　　　　  前一个字符0次或无限次扩展　　　　　　　　　　　　　　　　　 abc*表示ab、abc、abcc、abccc等</p>
+<p>+　　　　　  前一个字符1次或无限次扩展　　　　　　　　　 　　　　　　　　abc+表示abc、abcc、abccc等</p>
+<p>？　　　　　 前一个字符0次或1次扩展　　　　　　　　　　　　　　　　　　　abc？表示ab、abc</p>
+<p>|　　　　　  左右表达式任意一个　　　　　　　　　　　　　　　　　　　　   abc|def表示abc、def</p>
+<p>{m}　　　　  扩展前一个字符m次　　　　　　　　　　　　　　　　　　　　　ab{2}c表示abbc</p>
+<p>注意，大括号只对大括号前的一个字符进行扩展</p>
+<p>{m,n}　　　 扩展前一个字符m至n次（含n）　　　　　　　　　　　　　　　   ab{1,2}c表示abc，abbc</p>
+<p>^　　　　　  匹配字符串开头　　　　　　　　　　　　　　　　　　　　　　　^abc表示abc且在一个字符串的开头</p>
+<p>$　　　　　  匹配字符串结尾　　　　　　　　　　　　　　　　　　　　　　　abc$表示abc且在一个字符串的结尾</p>
+<p>()　　　　　 分组标记，内部只能使用|操作符　　　　　　　　　　　　　　　　(abc)表示abc，(abc|def)表示abc、def</p>
+<p>\d　　　　　 数字，等价于[0-9]</p>
+<p>\w　　　　  单词字符，等价于[A-Za-z0-9_]</p>
+<p>经典正则表达式实例</p>
+<p>^[A-Za-z]+$　　　　　　　　　　由26个字母组成的字符串</p>
+<p>^[A-Za-z0-9]+$　　　　　　　　  由26个字母和数字组成的字符串</p>
+<p>^-?\d+$　　　　　　　　　　　　整数形式的字符串</p>
+<p>^[0-9]<em>[1-9][0-9]</em>$　　　　　　　 正整数形式的字符串</p>
+<p>[1-9]\d{5}　　　　　　　　　　　中国境内邮政编码，6位</p>
+<p>[\u4e00-\u9fa5]　　　　　　　　 匹配中文字符   采用utf-8编码来约定了中文字符的取值范围</p>
+<p>\d{3}-\d{8}|\d{4}-\d{7}　　　　　   国内电话号码，010-68913536</p>
+<h2 id="实际使用案例"><a href="#实际使用案例" class="headerlink" title="实际使用案例"></a>实际使用案例</h2><p>用于替换特征列中不规则的日期格式</p>
+<p>源数据issue特征列数据格式如下</p>
+<p><img src="https://gitee.com/soraakalin/imageupload/raw/master/re/re1.png" alt="re1"></p>
+<p>使用re正则式进行处理</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">def clean_mon(x):</span><br><span class="line">    mons = &#123;&#x27;jan&#x27;:1, &#x27;feb&#x27;:2, &#x27;mar&#x27;:3, &#x27;apr&#x27;:4,  &#x27;may&#x27;:5,  &#x27;jun&#x27;:6,</span><br><span class="line">            &#x27;jul&#x27;:7, &#x27;aug&#x27;:8, &#x27;sep&#x27;:9, &#x27;oct&#x27;:10, &#x27;nov&#x27;:11, &#x27;dec&#x27;:12&#125;</span><br><span class="line">    year_group = re.search(&#x27;(\d+)&#x27;, x)</span><br><span class="line">    if year_group:</span><br><span class="line">        year = int(year_group.group(1))</span><br><span class="line">        if year &lt; 22:</span><br><span class="line">            year += 2000</span><br><span class="line">        elif 100 &gt; year &gt; 22:</span><br><span class="line">            year += 1900</span><br><span class="line">        else:</span><br><span class="line">            year = 2022</span><br><span class="line">    else:</span><br><span class="line">        year = 2022</span><br><span class="line"></span><br><span class="line">    month_group = re.search(&#x27;([a-zA-Z]+)&#x27;, x)</span><br><span class="line">    if month_group:</span><br><span class="line">        mon = month_group.group(1).lower()</span><br><span class="line">        month = mons[mon]</span><br><span class="line">    else:</span><br><span class="line">        month = 0</span><br><span class="line"></span><br><span class="line">    return year*100 + month</span><br><span class="line"></span><br><span class="line">data[&#x27;earlies_credit_mon&#x27;] = data[&#x27;earlies_credit_mon&#x27;].apply(lambda x: clean_mon(x))</span><br></pre></td></tr></table></figure>
+
+<p>处理后结果如图</p>
+<p><img src="https://gitee.com/soraakalin/imageupload/raw/master/re/re2.png" alt="re2"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://soraakalin.top/2021/10/12/re/" data-id="ckuo3jqac0004dsuobpoodryu" data-title="re正则匹配的学习与运用" class="article-share-link">Teilen</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-gitlearn" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/10/09/gitlearn/" class="article-date">
@@ -93,7 +168,8 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>&emsp;&emsp;最近的比赛代码更新太快了，想着是时候学一下怎么在github上管理代码了，也把学习过程记录下来以免忘掉。</p>
+        <p>最近的比赛代码更新太快了，想着是时候学一下怎么在github上管理代码了，也把学习过程记录下来以免忘掉。</p>
+<p>参考资料：<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600">Git教程</a></p>
 <h2 id="git简介"><a href="#git简介" class="headerlink" title="git简介"></a>git简介</h2><p>git相较于普通的文件管理系统，不但能自动帮我记录每次文件的改动，还可以让同事协作编辑，这样就不用自己管理一堆类似的文件了，也不需要把文件传来传去。如果想查看某次改动，只需要在软件里瞄一眼就可以，岂不是很方便？</p>
 <p>这个软件用起来就应该像这个样子，能记录每次文件的改动：</p>
 <p><img src="https://gitee.com/soraakalin/imageupload/raw/master/gitlearn/git%E7%AE%80%E4%BB%8B.png" alt="git版本管理"></p>
@@ -252,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://soraakalin.top/2021/10/09/gitlearn/" data-id="ckujurp7h000gacuohcbo0656" data-title="Git学习" class="article-share-link">Teilen</a>
+      <a data-url="http://soraakalin.top/2021/10/09/gitlearn/" data-id="ckuo3jqak000hdsuoa35c3h7i" data-title="Git学习" class="article-share-link">Teilen</a>
       
       
       
@@ -341,7 +417,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://soraakalin.top/2021/09/24/O2Ocoupon/" data-id="ckujurp7a0004acuofhgegb7t" data-title="天池新人实战赛o2o优惠券使用预测总结" class="article-share-link">Teilen</a>
+      <a data-url="http://soraakalin.top/2021/09/24/O2Ocoupon/" data-id="ckuo3jqa70001dsuog99v2chh" data-title="天池新人实战赛o2o优惠券使用预测总结" class="article-share-link">Teilen</a>
       
       
       
@@ -377,7 +453,9 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="一、字体设置"><a href="#一、字体设置" class="headerlink" title="一、字体设置"></a>一、字体设置</h2><p>具体语法如下：</p>
+        <p>参考资料：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/191d1e21f7ed">Markdown基本语法</a></p>
+<hr>
+<h2 id="一、字体设置"><a href="#一、字体设置" class="headerlink" title="一、字体设置"></a>一、字体设置</h2><p>具体语法如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">**需要加粗的字体**</span><br><span class="line"></span><br><span class="line">*需要斜体的字体*</span><br><span class="line"></span><br><span class="line">***需要斜体加粗的字体***</span><br><span class="line"></span><br><span class="line">~~需要删除线的字体~~</span><br></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
@@ -481,7 +559,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://soraakalin.top/2021/09/17/MarkDown/" data-id="ckujurp790003acuo6kn8af82" data-title="MarkDown基本语法" class="article-share-link">Teilen</a>
+      <a data-url="http://soraakalin.top/2021/09/17/MarkDown/" data-id="ckuo3jqa30000dsuoc7dz038u" data-title="MarkDown基本语法" class="article-share-link">Teilen</a>
       
       
       
@@ -534,7 +612,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://soraakalin.top/2021/09/17/hello-world/" data-id="ckujurp7a0005acuoeqhagxdo" data-title="Hello World" class="article-share-link">Teilen</a>
+      <a data-url="http://soraakalin.top/2021/09/17/hello-world/" data-id="ckuo3jqab0003dsuo79klglpn" data-title="Hello World" class="article-share-link">Teilen</a>
       
       
       
@@ -589,6 +667,10 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/10/12/re/">re正则匹配的学习与运用</a>
+          </li>
         
           <li>
             <a href="/2021/10/09/gitlearn/">Git学习</a>
